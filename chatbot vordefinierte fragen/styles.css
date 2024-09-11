@@ -14,12 +14,12 @@ body {
 
 /* Chatbot-Container */
 .chatbot-container {
-    width: 100%; /* Volle Breite für mobile Geräte */
-    max-width: 450px; /* Maximale Breite für größere Bildschirme */
+    width: 90%; /* Volle Breite für mobile Geräte */
+    max-width: 750px; /* Maximale Breite für größere Bildschirme */
     max-height: 90vh; /* Maximale Höhe des Containers auf 90% des Viewports begrenzen */
-    background-color: rgba(26, 26, 26, 0.859);
+    background-color: rgba(11, 11, 11, 0.878);
     border-radius: 18px;
-    box-shadow: 0 4px 10px rgb(53, 39, 54);
+    box-shadow: 0 4px 10px rgb(40, 29, 41);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -83,8 +83,8 @@ body {
     cursor: pointer;
     font-size: 24px;
     color: #333;
-    margin-left: 10px;
-    position: relative;
+    margin-left: 400px;
+    position: static;
     right: 0;
 }
 
@@ -118,7 +118,7 @@ button:nth-child(even) {
 }
 
 button:hover {
-    background-color: #3e3b3b90;
+    background-color: #fffefec6;
     transform: scale(1.05);
 }
 
@@ -168,7 +168,7 @@ button:focus {
 /* Responsive Breakpoint für mobile Geräte */
 @media screen and (max-width: 768px) {
     .chatbot-container {
-        width: 100%;
+        width: 90%;
         height: auto;
         max-height: 90vh; /* Auf mobilen Geräten 90% der Bildschirmhöhe */
         padding: 10px;
