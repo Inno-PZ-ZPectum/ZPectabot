@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(251, 251, 251, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chatbot-container {
+    width: 500px; /* Breite des Containers */
+    max-width: 100%; /* Sicherstellen, dass der Container nicht über den Bildschirm hinausgeht */
+    background-color: rgba(0, 0, 0, 0.1); /* Leichtes Grau für Hintergrund */
+    border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Weniger Padding für geringere Höhe */
+    display: flex;
+    font-size: 13px;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0; /* Anfangszustand für Fade-In */
+    animation: fadeIn 2s forwards;
+}
+
+/* Titel-Text (Wie kann ich Ihnen helfen) */
+#chatbot-content h2 {
+    color: #ffffff; /* Helles Grau */
+    font-size: 18px;
+    margin: 0;
+    opacity: 0; /* Anfangszustand für Fade-In */
+    animation: fadeIn 2s forwards;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #7a7979c9;
+    border-radius: 38px;
+    padding: 8px; /* Weniger Padding für geringere Höhe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Relative Positionierung für Button innerhalb des Containers */
+}
+
+#userInput {
+    border: none;
+    background: none;
+    flex: 1;
+    padding: 8px; /* Weniger Padding für geringere Höhe */
+    font-size: 14px; /* Kleinere Schriftgröße */
+    color: #ffffff;
+}
+
+#userInput::placeholder {
+    color: #888;
+}
+
+#enterButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Große Größe des Symbols */
+    color: #333;
+    margin-left: 200px; /* Weniger Abstand zwischen Eingabefeld und Button */
+    position: sticky; /* Absolute Positionierung für Button innerhalb des Containers */
+    right: 0px; /* Abstand vom rechten Rand des Containers */
+}
+
+/* Kategorien und Buttons stylen */
+button {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 4px 12px; /* Weniger Padding für geringere Höhe */
+    margin: 4px 0; /* Weniger Abstand zwischen den Buttons */
+    font-size: 12px; /* Kleinere Schriftgröße */
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    opacity: 0; /* Anfangszustand für Fade-In */
+    animation: slideIn 1.5s forwards;
+}
+
+/* Buttons in zwei Reihen anordnen */
+button:nth-child(odd) {
+    margin-right: 10px;
+    display: inline-block;
+    width: calc(50% - 5px); /* Breite für zwei Buttons in einer Reihe */
+}
+
+button:nth-child(even) {
+    display: inline-block;
+    width: calc(50% - 5px); /* Breite für zwei Buttons in einer Reihe */
+}
+
+button:hover {
+    background-color: #3e3b3b90;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Zurück-Button speziell stylen */
+#backButton {
+    background-color: #ddd;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 16px; /* Weniger Padding für geringere Höhe */
+    font-size: 13px; /* Kleinere Schriftgröße */
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 15px; /* Weniger Abstand oben */
+}
+
+#backButton:hover {
+    background-color: #1a1a1a8f;
+    transform: scale(1.05);
+}
+
+/* Animationsdefinitionen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
