@@ -83,8 +83,8 @@ body {
     cursor: pointer;
     font-size: 24px;
     color: #333;
-    margin-left: 400px;
-    position: static;
+    margin-left: 0px;
+    position: absolute
     right: 0;
 }
 
@@ -166,7 +166,7 @@ button:focus {
 }
 
 /* Responsive Breakpoint für mobile Geräte */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
     .chatbot-container {
         width: 90%;
         height: auto;
