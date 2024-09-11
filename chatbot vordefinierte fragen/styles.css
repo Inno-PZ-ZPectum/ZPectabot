@@ -8,62 +8,62 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Standard-Stile für größere Bildschirme */
+/* Chatbot-Container */
 .chatbot-container {
-    width: 450px; /* Breite des Containers für größere Bildschirme */
-    max-width: 100%; /* Sicherstellen, dass der Container nicht über den Bildschirm hinausgeht */
-    background-color: rgba(15, 15, 15, 0.668); /* Leichtes Grau für Hintergrund */
+    width: 100%; /* Volle Breite für mobile Geräte */
+    max-width: 450px; /* Maximale Breite für größere Bildschirme */
+    max-height: 90vh; /* Maximale Höhe des Containers auf 90% des Viewports begrenzen */
+    background-color: rgba(49, 49, 49, 0.79);
     border-radius: 18px;
-    box-shadow: 0 4px 10px rgba(39, 26, 40, 0.638);
-    padding: 20px; /* Weniger Padding für geringere Höhe */
+    box-shadow: 0 4px 10px rgb(53, 39, 54);
+    padding: 10px;
     display: flex;
-    font-size: 13px;
     flex-direction: column;
     justify-content: space-between;
-    opacity: 0; /* Anfangszustand für Fade-In */
+    overflow-y: auto; /* Scrollen ermöglichen, falls der Inhalt größer ist als der Container */
+    opacity: 0;
     animation: fadeIn 2s forwards;
 }
 
 /* Titel-Text (Wie kann ich Ihnen helfen) */
 #chatbot-content h2 {
-    color: #ffffff; /* Helles Grau */
+    color: #ffffff;
     font-size: 18px;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
-    opacity: 0; /* Anfangszustand für Fade-In */
+    opacity: 0;
     animation: fadeIn 2s forwards;
 }
 
 #chatbot-content p {
-    color: #ffffff; /* Helles Grau */
+    color: #ffffff;
     font-size: 11px;
-    margin-left: 20px; /* Weniger Abstand zwischen Eingabefeld und Button */
-    position: sticky; /* Absolute Positionierung für Button innerhalb des Containers */
-    right: 20px;
-    opacity: 0; /* Anfangszustand für Fade-In */
+    margin-left: 20px;
+    opacity: 0;
     animation: fadeIn 2s forwards;
 }
 
 #chatbot-content h3 {
-    color: #ffffff; /* Helles Grau */
+    color: #ffffff;
     font-size: 15px;
-    margin-left: 20px; /* Weniger Abstand zwischen Eingabefeld und Button */
-    position: sticky; /* Absolute Positionierung für Button innerhalb des Containers */
-    right: 20px;
-    opacity: 0; /* Anfangszustand für Fade-In */
+    margin-left: 20px;
+    opacity: 0;
     animation: fadeIn 2s forwards;
 }
 
+/* Input-Container */
 .input-container {
     display: flex;
     align-items: center;
     background-color: #484848;
     border-radius: 38px;
-    padding: 8px; /* Weniger Padding für geringere Höhe */
+    padding: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative; /* Relative Positionierung für Button innerhalb des Containers */
+    position: relative;
 }
 
 #userInput {
@@ -73,33 +73,35 @@ body {
     padding: 8px;
     font-size: 14px;
     color: #ffffff;
-    outline: none; /* Entfernen des Standard-Fokusrahmens */
+    outline: none;
 }
 
+/* Enter Button */
 #enterButton {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 24px; /* Große Größe des Symbols */
+    font-size: 24px;
     color: #333;
-    margin-left: 20px; /* Abstand zwischen Eingabefeld und Button */
-    position: relative; /* Relative Positionierung für Button innerhalb des Containers */
+    margin-left: 10px;
+    position: relative;
+    right: 0;
 }
 
-/* Kategorien und Buttons stylen */
+/* Kategorien und Buttons */
 button {
     display: block;
-    background-color: #fff;
+    background-color: #898989;
     border: 1px solid #ddd;
     border-radius: 20px;
-    padding: 4px 12px; /* Weniger Padding für geringere Höhe */
-    margin: 4px 0; /* Weniger Abstand zwischen den Buttons */
-    font-size: 12px; /* Kleinere Schriftgröße */
+    padding: 4px 12px;
+    margin: 4px 0;
+    font-size: 12px;
     text-align: center;
     color: #333;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    opacity: 0; /* Anfangszustand für Fade-In */
+    opacity: 0;
     animation: slideIn 1.5s forwards;
 }
 
@@ -107,12 +109,12 @@ button {
 button:nth-child(odd) {
     margin-right: 10px;
     display: inline-block;
-    width: calc(50% - 5px); /* Breite für zwei Buttons in einer Reihe */
+    width: calc(50% - 5px);
 }
 
 button:nth-child(even) {
     display: inline-block;
-    width: calc(50% - 5px); /* Breite für zwei Buttons in einer Reihe */
+    width: calc(50% - 5px);
 }
 
 button:hover {
@@ -124,17 +126,17 @@ button:focus {
     outline: none;
 }
 
-/* Zurück-Button speziell stylen */
+/* Zurück-Button */
 #backButton {
     background-color: #ddd;
     border: none;
     border-radius: 40px;
-    padding: 8px 16px; /* Weniger Padding für geringere Höhe */
-    font-size: 13px; /* Kleinere Schriftgröße */
+    padding: 8px 16px;
+    font-size: 13px;
     color: #333;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    margin-top: 15px; /* Weniger Abstand oben */
+    margin-top: 15px;
 }
 
 #backButton:hover {
@@ -163,32 +165,20 @@ button:focus {
     }
 }
 
-/* Mobile Ansicht */
-@media (max-width: 600px) {
+/* Responsive Breakpoint für mobile Geräte */
+@media screen and (max-width: 768px) {
     .chatbot-container {
-        width: 90%; /* Container breiter machen auf mobilen Geräten */
-        max-width: 100%; /* Maximale Breite auf 100% setzen */
-        padding: 15px; /* Etwas weniger Padding auf mobilen Geräten */
-        box-sizing: border-box; /* Padding in der Breite einbeziehen */
+        width: 100%;
+        height: auto;
+        max-height: 90vh; /* Auf mobilen Geräten 90% der Bildschirmhöhe */
+        padding: 10px;
     }
 
-    #enterButton {
-        margin-left: 10px; /* Weniger Abstand auf mobilen Geräten */
-        font-size: 20px; /* Etwas kleinere Schriftgröße auf mobilen Geräten */
+    #userInput {
+        font-size: 12px;
     }
 
     button {
-        font-size: 10px; /* Kleinere Schriftgröße für Buttons auf mobilen Geräten */
-        padding: 3px 8px; /* Weniger Padding für Buttons auf mobilen Geräten */
-    }
-
-    #chatbot-content h2 {
-        font-size: 16px; /* Kleinere Schriftgröße für Titel auf mobilen Geräten */
-    }
-
-    #chatbot-content p,
-    #chatbot-content h3 {
-        font-size: 12px; /* Kleinere Schriftgröße für Text auf mobilen Geräten */
-        margin-left: 10px; /* Weniger Abstand für Text auf mobilen Geräten */
+        font-size: 11px;
     }
 }
