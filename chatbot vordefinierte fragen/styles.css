@@ -10,12 +10,13 @@ body {
     margin: 0;
 }
 
+/* Standard-Stile für größere Bildschirme */
 .chatbot-container {
-    width: 450px; /* Breite des Containers */
+    width: 450px; /* Breite des Containers für größere Bildschirme */
     max-width: 100%; /* Sicherstellen, dass der Container nicht über den Bildschirm hinausgeht */
-    background-color: rgba(59, 59, 59, 0.653); /* Leichtes Grau für Hintergrund */
+    background-color: rgba(15, 15, 15, 0.668); /* Leichtes Grau für Hintergrund */
     border-radius: 18px;
-    box-shadow: 0 4px 10px rgb(101, 69, 104);
+    box-shadow: 0 4px 10px rgba(39, 26, 40, 0.638);
     padding: 20px; /* Weniger Padding für geringere Höhe */
     display: flex;
     font-size: 13px;
@@ -44,6 +45,7 @@ body {
     opacity: 0; /* Anfangszustand für Fade-In */
     animation: fadeIn 2s forwards;
 }
+
 #chatbot-content h3 {
     color: #ffffff; /* Helles Grau */
     font-size: 15px;
@@ -68,13 +70,10 @@ body {
     border: none;
     background: none;
     flex: 1;
-    padding: 8px; /* Weniger Padding für geringere Höhe */
-    font-size: 14px; /* Kleinere Schriftgröße */
+    padding: 8px;
+    font-size: 14px;
     color: #ffffff;
-}
-
-#userInput::placeholder {
-    color: #2a2a2a;
+    outline: none; /* Entfernen des Standard-Fokusrahmens */
 }
 
 #enterButton {
@@ -83,9 +82,8 @@ body {
     cursor: pointer;
     font-size: 24px; /* Große Größe des Symbols */
     color: #333;
-    margin-left: 200px; /* Weniger Abstand zwischen Eingabefeld und Button */
-    position: sticky; /* Absolute Positionierung für Button innerhalb des Containers */
-    right: 0px; /* Abstand vom rechten Rand des Containers */
+    margin-left: 20px; /* Abstand zwischen Eingabefeld und Button */
+    position: relative; /* Relative Positionierung für Button innerhalb des Containers */
 }
 
 /* Kategorien und Buttons stylen */
@@ -162,5 +160,35 @@ button:focus {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Mobile Ansicht */
+@media (max-width: 600px) {
+    .chatbot-container {
+        width: 90%; /* Container breiter machen auf mobilen Geräten */
+        max-width: 100%; /* Maximale Breite auf 100% setzen */
+        padding: 15px; /* Etwas weniger Padding auf mobilen Geräten */
+        box-sizing: border-box; /* Padding in der Breite einbeziehen */
+    }
+
+    #enterButton {
+        margin-left: 10px; /* Weniger Abstand auf mobilen Geräten */
+        font-size: 20px; /* Etwas kleinere Schriftgröße auf mobilen Geräten */
+    }
+
+    button {
+        font-size: 10px; /* Kleinere Schriftgröße für Buttons auf mobilen Geräten */
+        padding: 3px 8px; /* Weniger Padding für Buttons auf mobilen Geräten */
+    }
+
+    #chatbot-content h2 {
+        font-size: 16px; /* Kleinere Schriftgröße für Titel auf mobilen Geräten */
+    }
+
+    #chatbot-content p,
+    #chatbot-content h3 {
+        font-size: 12px; /* Kleinere Schriftgröße für Text auf mobilen Geräten */
+        margin-left: 10px; /* Weniger Abstand für Text auf mobilen Geräten */
     }
 }
