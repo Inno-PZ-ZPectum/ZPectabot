@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgba(251, 251, 251, 0);
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,11 +11,11 @@ body {
 }
 
 .chatbot-container {
-    width: 500px; /* Breite des Containers */
+    width: 450px; /* Breite des Containers */
     max-width: 100%; /* Sicherstellen, dass der Container nicht über den Bildschirm hinausgeht */
-    background-color: rgba(0, 0, 0, 0.1); /* Leichtes Grau für Hintergrund */
+    background-color: rgba(59, 59, 59, 0.653); /* Leichtes Grau für Hintergrund */
     border-radius: 18px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgb(101, 69, 104);
     padding: 20px; /* Weniger Padding für geringere Höhe */
     display: flex;
     font-size: 13px;
@@ -29,7 +29,27 @@ body {
 #chatbot-content h2 {
     color: #ffffff; /* Helles Grau */
     font-size: 18px;
+    padding: 20px;
     margin: 0;
+    opacity: 0; /* Anfangszustand für Fade-In */
+    animation: fadeIn 2s forwards;
+}
+
+#chatbot-content p {
+    color: #ffffff; /* Helles Grau */
+    font-size: 11px;
+    margin-left: 20px; /* Weniger Abstand zwischen Eingabefeld und Button */
+    position: sticky; /* Absolute Positionierung für Button innerhalb des Containers */
+    right: 20px;
+    opacity: 0; /* Anfangszustand für Fade-In */
+    animation: fadeIn 2s forwards;
+}
+#chatbot-content h3 {
+    color: #ffffff; /* Helles Grau */
+    font-size: 15px;
+    margin-left: 20px; /* Weniger Abstand zwischen Eingabefeld und Button */
+    position: sticky; /* Absolute Positionierung für Button innerhalb des Containers */
+    right: 20px;
     opacity: 0; /* Anfangszustand für Fade-In */
     animation: fadeIn 2s forwards;
 }
@@ -37,7 +57,7 @@ body {
 .input-container {
     display: flex;
     align-items: center;
-    background-color: #7a7979c9;
+    background-color: #484848;
     border-radius: 38px;
     padding: 8px; /* Weniger Padding für geringere Höhe */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -54,7 +74,7 @@ body {
 }
 
 #userInput::placeholder {
-    color: #888;
+    color: #2a2a2a;
 }
 
 #enterButton {
