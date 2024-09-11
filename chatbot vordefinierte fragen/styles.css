@@ -17,7 +17,7 @@ body {
     width: 100%; /* Volle Breite für mobile Geräte */
     max-width: 450px; /* Maximale Breite für größere Bildschirme */
     max-height: 90vh; /* Maximale Höhe des Containers auf 90% des Viewports begrenzen */
-    background-color: rgba(49, 49, 49, 0.79);
+    background-color: rgba(26, 26, 26, 0.859);
     border-radius: 18px;
     box-shadow: 0 4px 10px rgb(53, 39, 54);
     padding: 10px;
